@@ -405,17 +405,18 @@ class Helper(object):
 
     def _latest_widevine_version(self, eula=False):
         """Returns the latest available version of Widevine CDM/Chrome OS."""
+        use_current = not ('true' == ADDON.getSetting('use_versions'))
         if eula:
-            self._url = config.WIDEVINE_CURRENT_VERSION_URL
-            return self._http_request()
+            self._url = config.WIDEVINE_CURRENT_VERSION_URL if use_current else config.WIDEVINE_VERSIONS_URL
+            return self._http_request() if use_current else max([s.strip() for s in self._http_request().splitlines()])
 
         ADDON.setSetting('last_update', str(time.mktime(datetime.utcnow().timetuple())))
         if 'x86' in self._arch():
             if self._legacy():
                 return config.WIDEVINE_LEGACY_VERSION
             else:
-                self._url = config.WIDEVINE_CURRENT_VERSION_URL
-                return self._http_request()
+                self._url = config.WIDEVINE_CURRENT_VERSION_URL if use_current else config.WIDEVINE_VERSIONS_URL
+                return self._http_request() if use_current else max([s.strip() for s in self._http_request().splitlines()])
         else:
             return [x for x in self._chromeos_config() if config.CHROMEOS_ARM_HWID in x['hwidmatch']][0]['version']
 

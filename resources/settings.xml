@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <settings>
-   <setting id="disabled" value="" visible="false" />
-   <setting id="last_update" value="" visible="false" />
+    <setting id="disabled" value="" visible="false" />
+    <setting id="last_update" value="" visible="false" />
+    <setting label="30042" type="bool" id="use_versions" default="false"/>
+    <setting label="30043" id="run_manually" type="action" action="RunScript(special://home/addons/script.module.inputstreamhelper/lib/run_manually.py)" />
+</settings>
 </settings>

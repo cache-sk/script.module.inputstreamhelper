@@ -64,6 +64,8 @@ WIDEVINE_MINIMUM_KODI_VERSION = {
 
 WIDEVINE_CURRENT_VERSION_URL = 'https://dl.google.com/widevine-cdm/current.txt'
 
+WIDEVINE_VERSIONS_URL = 'https://dl.google.com/widevine-cdm/versions.txt'
+
 WIDEVINE_DOWNLOAD_URL = 'https://dl.google.com/widevine-cdm/{0}-{1}-{2}.zip'
 
 WIDEVINE_LICENSE_FILE = 'LICENSE.txt'

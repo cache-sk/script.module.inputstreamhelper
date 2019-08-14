@@ -176,3 +176,11 @@ msgstr ""
 msgctxt "#30041"
 msgid "Widevine CDM is required"
 msgstr ""
+
+msgctxt "#30042"
+msgid "Use versions list instead of current version for latest version detection"
+msgstr ""
+
+msgctxt "#30043"
+msgid "Force a Widevine CDM (re)install"
+msgstr ""
